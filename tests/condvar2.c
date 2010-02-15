@@ -99,7 +99,7 @@ main()
   /* get current system time */
   _ftime(&currSysTime);
 
-  abstime.tv_sec = currSysTime.time;
+  abstime.tv_sec = (long)currSysTime.time;
   abstime.tv_nsec = NANOSEC_PER_MILLISEC * currSysTime.millitm;
 
   abstime.tv_sec += 1;
@@ -109,7 +109,7 @@ main()
   assert(pthread_mutex_unlock(&mutex) == 0);
 
   {
-  int result = pthread_cond_destroy(&cv);
+  DWORD_PTR result = pthread_cond_destroy(&cv);
   if (result != 0)
     {
       fprintf(stderr, "Result = %s\n", error_string[result]);

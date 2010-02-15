@@ -67,7 +67,7 @@ void * rdfunc(void * arg)
 
   _ftime(&currSysTime);
 
-  abstime.tv_sec = currSysTime.time;
+  abstime.tv_sec = (long)currSysTime.time;
   abstime.tv_nsec = NANOSEC_PER_MILLISEC * currSysTime.millitm;
 
 
@@ -95,10 +95,10 @@ main()
   pthread_t wrt2;
   pthread_t rdt1;
   pthread_t rdt2;
-  int wr1Result = 0;
-  int wr2Result = 0;
-  int rd1Result = 0;
-  int rd2Result = 0;
+  DWORD_PTR wr1Result = 0;
+  DWORD_PTR wr2Result = 0;
+  DWORD_PTR rd1Result = 0;
+  DWORD_PTR rd2Result = 0;
 
   bankAccount = 0;
 

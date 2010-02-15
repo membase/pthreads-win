@@ -77,9 +77,9 @@ main()
   pthread_t wrt1;
   pthread_t wrt2;
   pthread_t rdt;
-  int wr1Result = 0;
-  int wr2Result = 0;
-  int rdResult = 0;
+  DWORD_PTR wr1Result = 0;
+  DWORD_PTR wr2Result = 0;
+  DWORD_PTR rdResult = 0;
 
   bankAccount = 0;
 

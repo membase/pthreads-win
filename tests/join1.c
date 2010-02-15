@@ -56,7 +56,7 @@ main(int argc, char * argv[])
 {
 	pthread_t id[4];
 	int i;
-	int result;
+	DWORD_PTR result;
 
 	/* Create a few threads and then exit. */
 	for (i = 0; i < 4; i++)

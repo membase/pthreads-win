@@ -161,7 +161,7 @@ main()
   for (i = 1; i <= NUMTHREADS; i++)
     {
       int fail = 0;
-      int result = 0;
+      DWORD_PTR result = 0;
 
       /*
        * The thread does not contain any cancelation points, so

@@ -113,7 +113,7 @@ main()
 //printf("value = %d\n", -value); fflush(stdout);
 	assert(pthread_cancel(t[50]) == 0);
 	  {
-	    int result;
+	    DWORD_PTR result;
 	    assert(pthread_join(t[50], (void **) &result) == 0);
 //	    printf("result = %d\n", result); fflush(stdout);
 	  }

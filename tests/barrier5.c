@@ -90,7 +90,7 @@ int
 main()
 {
   int i, j;
-  int result;
+  DWORD_PTR result;
   int serialThreadsTotal;
   pthread_t t[NUMTHREADS + 1];
 
@@ -112,7 +112,7 @@ main()
       for (i = 1; i <= j; i++)
         {
           assert(pthread_join(t[i], (void **) &result) == 0);
-          serialThreadsTotal += result;
+           serialThreadsTotal += (int)result;
         }
 
       assert(serialThreadsTotal == BARRIERS - 1);

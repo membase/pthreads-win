@@ -58,12 +58,12 @@ CXX     = $(CROSS)g++
 RANLIB  = $(CROSS)ranlib
 RC	= $(CROSS)windres
 
-OPT	= $(CLEANUP) -O3 -finline-functions
+OPT	= $(CLEANUP) -O3  -DHAVE_STRUCT_TIMESPEC -D__MINGW32__ -finline-functions
 DOPT	= $(CLEANUP) -g -O0
 XOPT	=
 
 RCFLAGS		= --include-dir=.
-LFLAGS		= -lwsock32
+LFLAGS		= -lws2_32
 
 # ----------------------------------------------------------------------
 # The library can be built with some alternative behaviour to

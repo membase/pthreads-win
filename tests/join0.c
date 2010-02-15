@@ -53,7 +53,7 @@ int
 main(int argc, char * argv[])
 {
   pthread_t id;
-  int result;
+  DWORD_PTR result;
 
   /* Create a single thread and wait for it to exit. */
   assert(pthread_create(&id, NULL, func, (void *) 123) == 0);

@@ -51,7 +51,7 @@ MAKE	= make
 #
 XXCFLAGS	= 
 XXLIBS	= -lws2_32
-#CFLAGS	= -O3 -UNDEBUG -Wall $(XXCFLAGS)
+#CFLAGS	= -O3 -D_M_AMD64 -UNDEBUG -Wall $(XXCFLAGS)
 CFLAGS	= -g -UNDEBUG -Wall $(XXCFLAGS)
 BUILD_DIR	= ..
 INCLUDES	= -I.
@@ -69,7 +69,7 @@ LIB	= libpthread$(GCX).a
 DLL	= pthread$(GCX).dll
 QAPC	= ../QueueUserAPCEx/User/quserex.dll
 
-COPYFILES	= $(HDR) $(LIB) $(DLL) $(QAPC)
+COPYFILES	= $(HDR) $(LIB) $(DLL)
 
 # If a test case returns a non-zero exit code to the shell, make will
 # stop.
@@ -327,13 +327,13 @@ sizes.pass: sizes.exe
 	@ $(ECHO) Passed
 	@ $(TOUCH) $@
 
-%.bench: $(LIB) $(DLL) $(HDR) $(QAPC) $(XXLIBS) %.exe
+%.bench: $(LIB) $(DLL) $(HDR)  $(XXLIBS) %.exe
 	@ $(ECHO) Running $*
 	$*
 	@ $(ECHO) Done
 	@ $(TOUCH) $@
 
-%.exe: %.c $(LIB) $(DLL) $(HDR) $(QAPC)
+%.exe: %.c $(LIB) $(DLL) $(HDR)
 	@ $(ECHO) Compiling $@
 	@ $(ECHO) $(CC) $(CFLAGS) -o $@ $< $(INCLUDES) -L. -lpthread$(GCX) -lsupc++ $(XXLIBS)
 	@ $(CC) $(CFLAGS) -o $@ $< $(INCLUDES) -L. -lpthread$(GCX) -lsupc++ $(XXLIBS)

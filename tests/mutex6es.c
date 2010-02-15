@@ -73,7 +73,7 @@ int
 main()
 {
   pthread_t t;
-  int result = 0;
+  DWORD_PTR result = 0;
 
   assert(mutex == PTHREAD_ERRORCHECK_MUTEX_INITIALIZER);
 

@@ -65,7 +65,7 @@ int
 main(int argc, char * argv[])
 {
   pthread_t t;
-  int result = 0;
+  DWORD_PTR result = 0;
 
   assert(pthread_mutex_lock(&mx) == 0);
 

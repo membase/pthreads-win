@@ -105,7 +105,7 @@ main()
 {
   int i;
   pthread_t t[NUMTHREADS + 1];
-  int result = 0;
+  DWORD_PTR result = 0;
   struct _timeb currSysTime;
   const DWORD NANOSEC_PER_MILLISEC = 1000000;
 
@@ -116,7 +116,7 @@ main()
   /* get current system time */
   _ftime(&currSysTime);
 
-  abstime.tv_sec = currSysTime.time;
+  abstime.tv_sec = (long)currSysTime.time;
   abstime.tv_nsec = NANOSEC_PER_MILLISEC * currSysTime.millitm;
 
   abstime.tv_sec += 5;

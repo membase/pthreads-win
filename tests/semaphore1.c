@@ -119,7 +119,7 @@ main()
 {
   pthread_t t;
   sem_t s;
-  int result;
+  DWORD_PTR result;
 
   assert(pthread_create(&t, NULL, thr, NULL) == 0);
   assert(pthread_join(t, (void **)&result) == 0);

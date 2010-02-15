@@ -226,7 +226,7 @@ main()
   for (i = 0; i < NUMTHREADS; i++)
     {
       int fail = 0;
-      int result = 0;
+      DWORD_PTR result = 0;
 
 	/* Canceled thread */
       assert(pthread_join(ct[i], (void **) &result) == 0);
